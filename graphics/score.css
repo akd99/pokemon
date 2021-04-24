@@ -37,13 +37,13 @@ body {
 	line-height: 80px;
 }
 
-#player1Prizes {
+#player1ScoreDiv {
 	background-image: linear-gradient(grey, black);
 	border-right: 4px solid white;
 	border-radius: 10% 0 0 10%;
 }
 
-#player2Prizes {
+#player2ScoreDiv {
 	background-image: linear-gradient(grey, black);
 	border-radius: 0 10% 10% 0;
 }
