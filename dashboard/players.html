@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Players</title>
+</head>
+<style>
+.grid-container {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-columns: auto auto auto auto;
+  background-color: #525F78;
+}
+.button {
+	background-color: #000000;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+</style>
+<body>
+	<div class="grid-container">
+		<label for="player1">Player 1:</label>
+		<input id="player1">
+		<label for="player2">Player 2:</label>
+		<input id="player2">
+	</div>
+<div>
+	<button class="button" onclick="updatePlayers()">UPDATE</button>
+	<script src="players.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "name": "pokemon",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "akd",
+    "email": "",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "decks",
+        "title": "Decks",
+        "width": 4,
+        "file": "decks.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "cards",
+        "title": "Cards",
+        "width": 4,
+        "file": "cards.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "lowerthird",
+        "title": "Lower Third",
+        "width": 4,
+        "file": "lowerthird.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "prizes",
+        "title": "Prizes",
+        "width": 4,
+        "file": "prizes.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "players",
+        "title": "Players",
+        "width": 4,
+        "file": "players.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "scoreboard.html",
+        "title": "Scoreboard",
+        "width": 4,
+        "file": "scoreboard.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "decks.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "cards.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "lowerthird.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "prizes.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "players.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "scoreboard.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.6.1",
+    "jquery": "^3.6.0",
+    "pokemontcgsdk": "^2.0.0",
+    "selective": "^0.1.2"
+  }
+}

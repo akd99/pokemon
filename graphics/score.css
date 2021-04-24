@@ -1,0 +1,49 @@
+body {
+	font-family: Audiowide, sans-serif;
+	background: red;
+}
+
+#scoreboard{
+	display: flex;
+	position: center;
+	top: 20px;
+	left: 50px;
+	height: 80px;
+	width: 220px;
+	margin: 0 auto;
+	border: 4px solid white;
+	border-radius: 10% 10% 10% 10%;
+}
+
+.score1 {
+	color: white;
+	font-size: 60px;
+	
+	height: 80px;
+	width: 110px;
+	
+	text-align: center;
+	line-height: 80px;
+}
+
+.score2 {
+	color: white;
+	font-size: 60px;
+	
+	height: 80px;
+	width: 110px;
+	
+	text-align: center;
+	line-height: 80px;
+}
+
+#player1Prizes {
+	background-image: linear-gradient(grey, black);
+	border-right: 4px solid white;
+	border-radius: 10% 0 0 10%;
+}
+
+#player2Prizes {
+	background-image: linear-gradient(grey, black);
+	border-radius: 0 10% 10% 0;
+}

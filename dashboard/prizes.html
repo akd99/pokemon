@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+	<style>
+		.monospace {
+			font-family: monospace;
+		}
+		.grid-container {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-columns: auto auto auto auto;
+  background-color: #525F78;
+}
+.button {
+	background-color: #000000;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+	</style>
+</head>
+<body>
+	<label for="player1Prizes">Player 1 Prizes</label>
+
+	<select id="p1p">
+		<option value=0>0</option>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+		<option value=6>6</option>
+</select>
+&nbsp;&nbsp;
+	<label for="player2Prizes">Player 2 Prizes</label>
+
+	<select id="p2p">
+		<option value=0>0</option>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+		<option value=6>6</option>
+</select>
+<br>
+<br>
+	<button class="button" onclick="updatePrizes()">Update</button>
+	<br>
+	<button class="button" onclick="resetPrizes()">Reset Prizes</button>
+	<script src="prizes.js"></script>
+</body>
+</html>
