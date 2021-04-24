@@ -8,7 +8,6 @@ p1prizeRep.on('change', (newVal) => {
     const leftPrize4El = document.getElementById('leftPrize4');
     const leftPrize5El = document.getElementById('leftPrize5');
     const leftPrize6El = document.getElementById('leftPrize6');
-   // console.log(`VALUE WAS CHANGED FROM ${oldValue} to ${newValue}`);
     if (newVal == 0) {
         leftPrize1El.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=pokeballbw.png width=50 height=50>";
         leftPrize2El.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;<img src=pokeballbw.png width=50 height=50>";
