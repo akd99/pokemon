@@ -1,5 +1,5 @@
-const p1Rep = nodecg.Replicant('player1', {defaultValue: 0});
-const p2Rep = nodecg.Replicant('player2', {defaultValue: 0});
+const p1Rep = nodecg.Replicant('player1score', {defaultValue: 0});
+const p2Rep = nodecg.Replicant('player2score', {defaultValue: 0});
 
 p1Rep.on('change', (newVal) => {
 	const p1El = document.getElementById('player1Prizes');
