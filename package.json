@@ -48,20 +48,6 @@
         "width": 4,
         "file": "prizes.html",
         "headerColor": "#525F78"
-      },
-      {
-        "name": "players",
-        "title": "Players",
-        "width": 4,
-        "file": "players.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "scoreboard.html",
-        "title": "Scoreboard",
-        "width": 4,
-        "file": "scoreboard.html",
-        "headerColor": "#525F78"
       }
     ],
     "graphics": [
@@ -82,16 +68,6 @@
       },
       {
         "file": "prizes.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "players.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "scoreboard.html",
         "width": 1920,
         "height": 1080
       }

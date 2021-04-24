@@ -1,21 +1,13 @@
 const p1prizeRep = nodecg.Replicant('p1Prize', {defaultValue: 0});
 const p2prizeRep = nodecg.Replicant('p2Prize', {defaultValue: 0});
 
-const leftPrize1El = document.getElementById('leftPrize1');
-const leftPrize2El = document.getElementById('leftPrize2');
-const leftPrize3El = document.getElementById('leftPrize3');
-const leftPrize4El = document.getElementById('leftPrize4');
-const leftPrize5El = document.getElementById('leftPrize5');
-const leftPrize6El = document.getElementById('leftPrize6');
-
-const rightPrize1El = document.getElementById('rightPrize1');
-const rightPrize2El = document.getElementById('rightPrize2');
-const rightPrize3El = document.getElementById('rightPrize3');
-const rightPrize4El = document.getElementById('rightPrize4');
-const rightPrize5El = document.getElementById('rightPrize5');
-const rightPrize6El = document.getElementById('rightPrize6');
-
 p1prizeRep.on('change', (newVal) => {
+    const leftPrize1El = document.getElementById('leftPrize1');
+    const leftPrize2El = document.getElementById('leftPrize2');
+    const leftPrize3El = document.getElementById('leftPrize3');
+    const leftPrize4El = document.getElementById('leftPrize4');
+    const leftPrize5El = document.getElementById('leftPrize5');
+    const leftPrize6El = document.getElementById('leftPrize6');
    // console.log(`VALUE WAS CHANGED FROM ${oldValue} to ${newValue}`);
     if (newVal == 0) {
         leftPrize1El.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=pokeballbw.png style=width:50px; height:50px;>";
@@ -70,6 +62,13 @@ p1prizeRep.on('change', (newVal) => {
 })
 
 p2prizeRep.on('change', (newVal) => {
+    
+    const rightPrize1El = document.getElementById('rightPrize1');
+    const rightPrize2El = document.getElementById('rightPrize2');
+    const rightPrize3El = document.getElementById('rightPrize3');
+    const rightPrize4El = document.getElementById('rightPrize4');
+    const rightPrize5El = document.getElementById('rightPrize5');
+    const rightPrize6El = document.getElementById('rightPrize6');
     if (newVal == 0) {
         rightPrize1El.innerHTML = "<img src=pokeballbw.png style=width:50px; height:50px;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
         rightPrize2El.innerHTML = "&nbsp;<img src=pokeballbw.png style=width:50px; height:50px;>&nbsp;&nbsp;&nbsp;&nbsp;";
