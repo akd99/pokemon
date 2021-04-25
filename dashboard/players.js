@@ -1,5 +1,5 @@
-const player1NameRep = nodecg.Replicant('player1name', {defaultValue: ""});
-const player2NameRep = nodecg.Replicant('Player2name', {defaultValue: ""});
+const player1NameRep = nodecg.Replicant('player1name');
+const player2NameRep = nodecg.Replicant('Player2name');
 
 function updatePlayers() {
     const player1Input = document.getElementById('player1');

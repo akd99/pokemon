@@ -1,5 +1,5 @@
-const p1ScoreRep = nodecg.Replicant('player1score', {defaultValue: 0});
-const p2ScoreRep = nodecg.Replicant('player2score', {defaultValue: 0});
+const p1ScoreRep = nodecg.Replicant('player1score');
+const p2ScoreRep = nodecg.Replicant('player2score');
 
 function updateScore(){
     const p1Input = document.getElementById('p1ScoreInput');

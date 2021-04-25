@@ -1,5 +1,5 @@
-const leftDeckRep = nodecg.Replicant('leftDeck', {defaultValue: ""});
-const rightDeckRep = nodecg.Replicant('rightDeck', {defaultValue: ""});
+const leftDeckRep = nodecg.Replicant('leftDeck');
+const rightDeckRep = nodecg.Replicant('rightDeck');
 
 function updateDeck() {
     const left_deckInput = document.getElementById('left_deck');

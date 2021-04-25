@@ -1,9 +1,10 @@
-const p1prizeRep = nodecg.Replicant('p1Prize', {defaultValue: 0});
-const p2prizeRep = nodecg.Replicant('p2Prize', {defaultValue: 0});
+const p1prizeRep = nodecg.Replicant('p1Prize');
+const p2prizeRep = nodecg.Replicant('p2Prize');
 
-function updatePrizes() {
 	const player1prizeInput = document.getElementById('p1p')
 	const player2prizeInput = document.getElementById('p2p')
+
+function updatePrizes() {
 	p1prizeRep.value = player1prizeInput.value;
 	p2prizeRep.value = player2prizeInput.value;
 }
