@@ -1,11 +1,6 @@
 const nameplateEl = document.getElementById('nameplate')
 const messageEl = document.getElementById('message')
 
-pokemon.card.find('base1-4')
-        .then(card => {
-            console.log(card.name) // "Charizard"
-        })
-
 nodecg.listenFor('showLowerThird', (data) => {
     
     messageEl.innerHTML = data.message;
