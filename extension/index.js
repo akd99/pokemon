@@ -1,9 +1,17 @@
 'use strict';
-
+const axios = require('axios');
+const pokemon = require('pokemontcgsdk');
+pokemon.configure({apiKey: 'f4611634-9596-4386-9d93-9b55e200f91d'});
 module.exports = function (nodecg) {
-	// const p1prizeRep = nodecg.Replicant('p1Prize');
-	// const p2prizeRep = nodecg.Replicant('p2Prize');
-	// const player1NameRep = nodecg.Replicant('player1name');
-	// const player2NameRep = nodecg.Replicant('Player2name');
-	
+
+	const pokemonResultsReplicant = nodecg.Replicant('pokemon-results');
+	nodecg.listenFor('pokemonSearch', async nameSearch =>{
+		try {
+			const result = await axios.get(`https://api.pokemontcg.io/v2/cards?q=name:"${nameSearch}"`)
+			pokemonResultsReplicant.value = result.data.data;
+			nodecg.log.info(pokemonResultsReplicant.value[0]);
+		} catch (error) {
+			nodecg.log.error(error);
+		}
+	});
 };
