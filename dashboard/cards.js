@@ -3,25 +3,36 @@ const searchButton = document.querySelector('#searchButton');
 const searchResults = document.querySelector('#searchResults');
 const searchResultsAbilites = document.querySelector('#searchResultsAbilites');
 const pokemonResultsReplicant = nodecg.Replicant('pokemon-results');
+const pokemonCardResultsReplicant = nodecg.Replicant('pokemon-card-results');
 
-searchButton.onclick = () => {
-    nodecg.sendMessage('pokemonSearch', queryInput.value);
-};
 
-pokemonResultsReplicant.on('change', (newValue, oldValue) =>{
-    if (!newValue) {
-        return;
+$('#select-card').selectize({
+    valueField: 'id',
+    labelField: 'name',
+    searchField: 'name',
+    options: [],
+    create: false,
+    loadThrottle: 200,
+    render: {
+        option: function(item, escape) {
+            return '<div>' +
+                '<img height=70 width=50 src="' + escape(item.images.small) + '" alt="">' +
+                '<span class="title">' +
+                    '<span class="name">' + escape(item.name) + ' - ' + escape(item.id) + '</span>' +
+                '</span>' +
+            '</div>';
+        }
+    },
+    load: function(query, callback) {
+        var resultsArray = '';
+        nodecg.sendMessage('pokemonCardSearch', query);
+        pokemonCardResultsReplicant.on('change', (newValue, oldValue) => {
+            nodecg.log.info(query);
+            nodecg.log.info('new value: ' + newValue);
+            nodecg.log.info('old value: ' + oldValue);
+            resultsArray = newValue;
+        });
+        $('#select-card')[0].selectize.clearOptions(true);
+        callback(resultsArray);
     }
-
-    searchResults.innerHTML = '';
-    searchResultsAbilites.innerHTML = '';
-
-    newValue.forEach(result => {
-        searchResults.insertAdjacentHTML('beforeend', `<div><a href="${result.images.large}">${result.name} - ${result.id}</a></div>`);
-        // if (!!result.abilities){
-        //     searchResultsAbilites.insertAdjacentHTML('beforeend', `<div>${result.abilities[0].name} - ${result.abilities[0].text}</div>`);
-        // } else {
-        //     searchResultsAbilites.innerHTML = '';
-        // };
-    });
 });
