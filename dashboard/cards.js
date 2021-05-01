@@ -2,6 +2,10 @@ const pokemonCardResultsReplicant = nodecg.Replicant('pokemon-card-results');
 const pokemonCardGetReplicant = nodecg.Replicant('pokemon-card-get');
 var cardData = '';
 
+//replicants for card data sent to graphics
+const pokemonLeftPlayerImageURLReplicant = nodecg.Replicant('left-player-card');
+const pokemonRightPlayerImageURLReplicant = nodecg.Replicant('right-player-card');
+
 //card document inserts
 const nameIDEl = document.getElementById('cardNameID');
 const cardThumbEl = document.getElementById('cardThumbnail');
@@ -81,4 +85,14 @@ pokemonCardGetReplicant.on('change', (newValue, oldValue) => {
 
 function buttonTest(){
     nodecg.log.info('button works');
+}
+
+function setLeftPlayerImage(){
+    pokemonLeftPlayerImageURLReplicant.value = cardData.images.small;
+    nodecg.log.info(pokemonLeftPlayerImageURLReplicant.value);
+}
+
+function setRightPlayerImage(){
+    pokemonRightPlayerImageURLReplicant.value = cardData.images.small;
+    nodecg.log.info(pokemonRightPlayerImageURLReplicant.value);
 }
