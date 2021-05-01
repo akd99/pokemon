@@ -12,6 +12,7 @@ $('#select-card').selectize({
     searchField: 'name',
     options: [],
     create: false,
+    persist: false,
     loadThrottle: 200,
     render: {
         option: function(item, escape) {
@@ -30,9 +31,14 @@ $('#select-card').selectize({
             nodecg.log.info(query);
             nodecg.log.info('new value: ' + newValue);
             nodecg.log.info('old value: ' + oldValue);
+            nodecg.log.info(newValue.length);
             resultsArray = newValue;
         });
         $('#select-card')[0].selectize.clearOptions(true);
         callback(resultsArray);
     }
 });
+
+function getValue() {
+    nodecg.log.info($('#select-card')[0].selectize.getValue());
+}
