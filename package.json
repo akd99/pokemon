@@ -31,7 +31,7 @@
       {
         "name": "cards",
         "title": "Cards",
-        "width": 4,
+        "width": 5,
         "file": "cards.html",
         "headerColor": "#525F78"
       },

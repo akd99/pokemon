@@ -1,10 +1,13 @@
-const queryInput = document.querySelector('#searchInput');
-const searchButton = document.querySelector('#searchButton');
-const searchResults = document.querySelector('#searchResults');
-const searchResultsAbilites = document.querySelector('#searchResultsAbilites');
-const pokemonResultsReplicant = nodecg.Replicant('pokemon-results');
 const pokemonCardResultsReplicant = nodecg.Replicant('pokemon-card-results');
+const pokemonCardGetReplicant = nodecg.Replicant('pokemon-card-get');
+var cardData = '';
 
+//card document inserts
+const nameIDEl = document.getElementById('cardNameID');
+const cardThumbEl = document.getElementById('cardThumbnail');
+const abilitiesEl = document.getElementById('abilities');
+const attacksEl = document.getElementById('attacks');
+const trainerTextEl = document.getElementById('trainerText');
 
 $('#select-card').selectize({
     valueField: 'id',
@@ -28,10 +31,6 @@ $('#select-card').selectize({
         var resultsArray = '';
         nodecg.sendMessage('pokemonCardSearch', query);
         pokemonCardResultsReplicant.on('change', (newValue, oldValue) => {
-            nodecg.log.info(query);
-            nodecg.log.info('new value: ' + newValue);
-            nodecg.log.info('old value: ' + oldValue);
-            nodecg.log.info(newValue.length);
             resultsArray = newValue;
         });
         $('#select-card')[0].selectize.clearOptions(true);
@@ -39,6 +38,47 @@ $('#select-card').selectize({
     }
 });
 
-function getValue() {
-    nodecg.log.info($('#select-card')[0].selectize.getValue());
+function getCard() {
+    const cardID = $('#select-card')[0].selectize.getValue();
+    nodecg.sendMessage('pokemonCardGet', cardID);
+}
+
+pokemonCardGetReplicant.on('change', (newValue, oldValue) => {
+    if (!newValue) {
+        return;
+    }
+    document.getElementById("abilityButton").disabled = true;
+    document.getElementById("attackButton").disabled = true;
+    document.getElementById("trainerTextButton").disabled = true;
+    abilitiesEl.innerHTML = '';
+    attacksEl.innerHTML = '';
+    trainerTextEl.innerHTML = '';
+    cardData = newValue;
+    nameIDEl.innerHTML = `${cardData.name} - ${cardData.id}`;
+    cardThumbEl.innerHTML = `<img width=125 height=174 src="${cardData.images.small}">`;
+    if (cardData.supertype == 'Pokémon') {
+        if (typeof cardData.abilities === 'undefined') {
+            abilitiesEl.innerHTML = 'N/A';
+        } else {
+            document.getElementById("abilityButton").disabled = false;
+            abilitiesEl.innerHTML = `${cardData.abilities[0].name} - ${cardData.abilities[0].text}`;
+        }
+        for (i = 0; i < cardData.attacks.length; i++){
+            attacksEl.insertAdjacentHTML('beforeend', `${i}: ${cardData.attacks[i].name} - ${cardData.attacks[i].text} - ${cardData.attacks[i].damage}<br><br>`);
+        }
+        document.getElementById("attackButton").disabled = false;
+    } else if(cardData.supertype == 'Trainer') {
+         for (i = 0; i < cardData.rules.length; i++){
+             trainerTextEl.insertAdjacentHTML('beforeend', `${i}: ${cardData.rules[i]}<br>`);
+         }
+         document.getElementById("trainerTextButton").disabled = false;
+    } else if (cardData.supertype == 'Energy') {
+
+    } else {
+
+    }
+});
+
+function buttonTest(){
+    nodecg.log.info('button works');
 }

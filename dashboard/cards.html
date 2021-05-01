@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Search</title>
+    <style>
+		.monospace {
+			font-family: monospace;
+		}
+		.grid-container {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-columns: auto auto auto auto;
+  background-color: #525F78;
+}
+.button {
+	background-color: #000000;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+	</style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.js" integrity="sha512-pF+DNRwavWMukUv/LyzDyDMn8U2uvqYQdJN0Zvilr6DDo/56xPDZdDoyPDYZRSL4aOKO/FGKXTpzDyQJ8je8Qw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.css" integrity="sha512-85w5tjZHguXpvARsBrIg9NWdNy5UBK16rAL8VWgnWXK2vMtcRKCBsHWSUbmMu0qHfXW2FVUDiWr6crA+IFdd1A==" crossorigin="anonymous" />
@@ -12,17 +35,21 @@
 </head>
 <body>
     <select id="select-card"></select>
-    <button id="getValue" onclick="getValue()">Get ID</button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <button id="getCard" onclick="getCard()">Get ID</button>
+    <div>
+        <div><span style="float: right" id="cardThumbnail"></span></div>
+        <div><span style="font-weight: bold">Card Name and ID: </span><span id="cardNameID"></span></div><br>
+        <div><span style="font-weight: bold">Ability: </span><span id="abilities"></span></div><br>
+        <div><span style="font-weight: bold">Attacks: </span><br><span id="attacks"></span></div><br>
+        <div><span style="font-weight: bold">Trainer Text: </span><br><span id="trainerText"></span></div><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div><button class="button" id="cardButton">Send Card To Stream</button><button class="button" onclick="buttonTest()" id="abilityButton">Send Ability to Stream</button><button class="button" id="attackButton">Send Attack to Stream</button></div><br>
+        <div><button class="button" id="trainerTextButton">Send Trainer Text To Stream</button></div><br><br>
+        <div><button class="button" id="leftPlayerImageButton">Set Left Player Image</button><button class="button" id="rightPlayerImageButton">Set Right Player Image</button></div>
+    </div>
     <script src="cards.js"></script>
 </body>
 </html>
