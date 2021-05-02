@@ -1,5 +1,5 @@
-const nameplateEl = document.getElementById('nameplate')
-const messageEl = document.getElementById('message')
+const nameplateEl = document.getElementById('nameplate');
+const messageEl = document.getElementById('message');
 
 nodecg.listenFor('showLowerThird', (data) => {
     

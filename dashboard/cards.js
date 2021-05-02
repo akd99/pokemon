@@ -5,6 +5,7 @@ var cardData = '';
 //replicants for card data sent to graphics
 const pokemonLeftPlayerImageURLReplicant = nodecg.Replicant('left-player-card');
 const pokemonRightPlayerImageURLReplicant = nodecg.Replicant('right-player-card');
+const pokemonCardDisplayURLReplicant = nodecg.Replicant('display-card');
 
 //card document inserts
 const nameIDEl = document.getElementById('cardNameID');
@@ -79,7 +80,7 @@ pokemonCardGetReplicant.on('change', (newValue, oldValue) => {
     } else if (cardData.supertype == 'Energy') {
 
     } else {
-
+        return;
     }
 });
 
@@ -96,3 +97,14 @@ function setRightPlayerImage(){
     pokemonRightPlayerImageURLReplicant.value = cardData.images.small;
     nodecg.log.info(pokemonRightPlayerImageURLReplicant.value);
 }
+
+function displayCardToStream(){
+    pokemonCardDisplayURLReplicant.value = cardData.images.large;
+    const duration = 5;
+    nodecg.sendMessage('displayCard', duration);
+}
+
+// function hideCard(){
+//     const duration = 5;
+//     nodecg.sendMessage('hideCard', duration);
+// }

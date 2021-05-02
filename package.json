@@ -62,6 +62,13 @@
         "width": 4,
         "file": "scoreboard.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "timer",
+        "title": "Timer",
+        "width": 4,
+        "file": "timer.html",
+        "headerColor": "#525F78"
       }
     ],
     "graphics": [
@@ -97,6 +104,12 @@
       },
       {
         "file": "playerCards.html",
+        "width": 1920,
+        "height": 1080
+      }
+      ,
+      {
+        "file": "timer.html",
         "width": 1920,
         "height": 1080
       }
