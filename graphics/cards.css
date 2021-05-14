@@ -1,14 +1,24 @@
 body {
 	background: red;
 }
-.wrapper {
-	top: 575px;
+.wrapperLeft {
+	top: 581px;
 	left: 5px;
 
     overflow: hidden;
     position: relative;
   }
-  .holder {
+  .holderLeft {
     overflow: hidden;
   }
 
+.wrapperRight {
+	top: 125px;
+	left: 1580px;
+
+    overflow: hidden;
+    position: relative;
+  }
+  .holderRight {
+    overflow: hidden;
+  }

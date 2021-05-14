@@ -98,10 +98,16 @@ function setRightPlayerImage(){
     nodecg.log.info(pokemonRightPlayerImageURLReplicant.value);
 }
 
-function displayCardToStream(){
+function displayCardToStreamLeft(){
     pokemonCardDisplayURLReplicant.value = cardData.images.large;
     const duration = 5;
-    nodecg.sendMessage('displayCard', duration);
+    nodecg.sendMessage('displayCardLeft', duration);
+}
+
+function displayCardToStreamRight(){
+    pokemonCardDisplayURLReplicant.value = cardData.images.large;
+    const duration = 5;
+    nodecg.sendMessage('displayCardRight', duration);
 }
 
 // function hideCard(){

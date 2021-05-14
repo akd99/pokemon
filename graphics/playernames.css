@@ -50,7 +50,8 @@ body {
 }
 
 #p1NameDiv {
-	color: rgb(29, 55, 201);
+	/* color: rgb(29, 55, 201); */
+	color: black;
 	font-size: 45px;
 	margin-bottom: 3px;
 	letter-spacing: 2px;
@@ -58,8 +59,8 @@ body {
 }
 
 #p2NameDiv {
-	color: rgb(156, 9, 9);
-
+	/* color: rgb(156, 9, 9); */
+	color: black;
 	font-size: 45px;
 	margin-bottom: 3px;
 	letter-spacing: 2px;
