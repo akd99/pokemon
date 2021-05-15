@@ -6,6 +6,7 @@ var cardData = '';
 const pokemonLeftPlayerImageURLReplicant = nodecg.Replicant('left-player-card');
 const pokemonRightPlayerImageURLReplicant = nodecg.Replicant('right-player-card');
 const pokemonCardDisplayURLReplicant = nodecg.Replicant('display-card');
+const pokemonCardDisplayAbilityReplicant = nodecg.Replicant('display-ability');
 
 //card document inserts
 const nameIDEl = document.getElementById('cardNameID');
@@ -110,7 +111,6 @@ function displayCardToStreamRight(){
     nodecg.sendMessage('displayCardRight', duration);
 }
 
-// function hideCard(){
-//     const duration = 5;
-//     nodecg.sendMessage('hideCard', duration);
-// }
+function displayAbilityToStream(){
+    nodecg.sendMessage('displayAbility', cardData.abilities[0]);
+}

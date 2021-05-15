@@ -1,0 +1,36 @@
+body {
+	font-family: Audiowide, sans-serif;
+	background: red;
+}
+
+#wrapper {
+    position: relative;
+    background: white;
+    width: 740px;
+    height: 170px;
+    top: 500px;
+    border-radius: 10px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    word-wrap: break-word;
+    margin: auto;
+}
+
+#name {
+    font-size: 40px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+#cardtext {
+    text-align: center;
+    width: 625px;
+    height: 100px;
+    font-size: 30px;
+    font-size: 3.5vw;
+    max-width: 650px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
