@@ -112,5 +112,9 @@ function displayCardToStreamRight(){
 }
 
 function displayAbilityToStream(){
-    nodecg.sendMessage('displayAbility', cardData.abilities[0]);
+    nodecg.sendMessage('displayAbility', cardData);
+}
+
+function displayTrainerTextToStream(){
+    nodecg.sendMessage('displayTrainerText', cardData);
 }
